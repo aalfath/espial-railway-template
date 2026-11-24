@@ -12,7 +12,7 @@ RUN ["/bin/busybox", "--install", "-s", "/bin"]
 COPY start.sh /app/start.sh
 RUN ["/bin/busybox", "chmod", "755", "/app/start.sh"]
 
-ENV PORT=3000 \
+ENV PORT=8080 \
     HOST=*6 \
     SQLITE_DATABASE=/app/data/espial.sqlite3 \
     IP_FROM_HEADER=true \
@@ -20,6 +20,6 @@ ENV PORT=3000 \
     ARCHIVE_BACKEND=disabled
 
 WORKDIR /app
-EXPOSE 3000
+EXPOSE 8080
 ENTRYPOINT []
 CMD ["/bin/sh", "/app/start.sh"]
